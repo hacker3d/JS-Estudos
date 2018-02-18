@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+
+
+    <!-Abaixo de 17 Muito abaixo do peso 
+    entre 17 e 18,49 Abaixo do peso
+     entre 18,5 e 24,99 Peso normal 
+     entre 18,5 e 24,99 Peso normal
+      Entre 25 e 29,99 Acima do peso*/ -!>
+
+
+    <script>
+        //IIFE                                                                                                                                                                                                                                                                              Entre 30 e 34,99	Obesidade I
+        (function massa() {
+
+
+            function massa(peso, altura, callback) {
+
+                var imc = peso / (altura * altura);
+                if (callback && typeof callback === 'function') {
+                    return callback(imc);
+
+                }
+                //return peso / (altura * altura);
+
+
+            }
+
+            function info(imc) {
+                if (imc <= 17) {
+                    return "Muito  abaixo do peso";
+
+
+                } else if (imc <= 18.49) {
+
+                    return "abaixo do peso"
+
+                } else if (imc <= 24.99) {
+
+                    return "Peso normal"
+
+                } else if (imc <= 29.99) {
+
+                    return "acima do peso"
+
+                }
+
+
+
+
+
+            }
+
+            var peso = prompt("Digite o seu peso : ");
+            var altura = prompt("Digite a sua atura: ");
+            var imc = massa(peso, altura, info);
+
+
+            //var classe = info(imc);
+            console.log(classe);
+            document.write("Você está a : ", classe);
+
+
+
+        })()
+        /**/
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
